@@ -103,7 +103,7 @@ double read_num()
             while((ch = getchar()) != '\n')
                 putchar(ch);
             putchar('"');
-            printf(" is not a number\n");
+            printf(" \033[0;31mis not a number\033[0m\n");
         }
         else {
             putchar('"');
@@ -116,7 +116,7 @@ double read_num()
             while((ch = getchar()) != '\n')
                 putchar(ch);
             putchar('"');
-            printf(" invalid input\n");
+            printf(" \033[0;31mis invalid input\033[0m\n");
         }
 
     }
@@ -165,7 +165,7 @@ void check_quadratic_equation(double a,double b, double c,  int number_of_roots 
 
 void Read(char* ch) {
 
-        char symbol = 0;
+        int symbol = 0;
 
         char word[String_Max_Len];
 
@@ -186,16 +186,19 @@ void Read(char* ch) {
 
             word[number++] = chr;
 
-            if (chr != ' ' || chr != 'N'  || chr != 'Y') {
+            printf("chr = %c\n", chr);
+
+            if (chr != ' ' && chr != 'N'  && chr != 'Y') {
+ 
                 incorrect_input = 1;
             }
-
+            printf("symbol = %d   incorrect_input = %d\n", symbol, incorrect_input);
             scanf("%c", &chr);
         }
 
         word[number] = '\0';
 
-        if (incorrect_input == 1 && symbol != 1) {
+        if (incorrect_input == 1 || symbol != 1) {
             printf("\n\033[0;31mInvalid input:\033[0m\"%s\"\n\n", word);
             *ch = '0';
         }
