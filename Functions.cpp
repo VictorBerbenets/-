@@ -186,13 +186,11 @@ void Read(char* ch) {
 
             word[number++] = chr;
 
-            printf("chr = %c\n", chr);
-
             if (chr != ' ' && chr != 'N'  && chr != 'Y') {
  
                 incorrect_input = 1;
             }
-            printf("symbol = %d   incorrect_input = %d\n", symbol, incorrect_input);
+
             scanf("%c", &chr);
         }
 
