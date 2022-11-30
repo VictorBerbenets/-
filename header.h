@@ -5,7 +5,10 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
+#include <string.h>
 #include <assert.h>
+
+const int String_Max_Len = 50;
 
 
 //!----------
@@ -59,6 +62,8 @@ void number_of_roots(double a, double b, double c);
 int equal_or_not(double x, double test_x);
 
 int is_equal(double x, double y);
+
+void Read(char* ch);
 
 //!----------
 //!@brief Testing the quadratic equation
