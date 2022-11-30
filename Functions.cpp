@@ -196,7 +196,7 @@ void Read(char* ch) {
         word[number] = '\0';
 
         if (incorrect_input == 1 && symbol != 1) {
-            printf("Invalid input: \"%s\"\n", word);
+            printf("\n\033[0;31mInvalid input:\033[0m\"%s\"\n\n", word);
             *ch = '0';
         }
 
